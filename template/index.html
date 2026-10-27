@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gráficos em Python</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">PY</div>
+        <h1>Gráficos em Python</h1>
+        <p>Laboratório de visualização estatística</p>
+    </header>
+
+    <main class="container">
+
+        <section class="introducao">
+            <h2>Escolha um gráfico</h2>
+            <p>
+                Clique em uma das imagens para executar
+                o respectivo programa Python.
+            </p>
+        </section>
+
+        <section class="cartoes">
+
+            <!-- CARTÃO 1: HISTOGRAMA -->
+            <button class="cartao"
+                    data-grafico="histograma"
+                    type="button">
+
+                <div class="ilustracao histograma">
+                    <svg viewBox="0 0 220 130"
+                         aria-hidden="true">
+                        <path d="M20 10 V110 H210"
+                              class="eixos"/>
+                        <rect x="35" y="85" width="22" height="25"/>
+                        <rect x="61" y="62" width="22" height="48"/>
+                        <rect x="87" y="38" width="22" height="72"/>
+                        <rect x="113" y="22" width="22" height="88"/>
+                        <rect x="139" y="48" width="22" height="62"/>
+                        <rect x="165" y="76" width="22" height="34"/>
+                    </svg>
+                </div>
+
+                <div class="conteudo-cartao">
+                    <h3>Histograma</h3>
+                    <p>
+                        Visualize a frequência dos dados
+                        distribuídos em intervalos.
+                    </p>
+                    <span class="link-cartao">
+                        Abrir gráfico →
+                    </span>
+                </div>
+
+            </button>
+
+            <!-- CARTÃO 2: DISTRIBUIÇÃO NORMAL -->
+            <button class="cartao"
+                    data-grafico="normal"
+                    type="button">
+
+                <div class="ilustracao normal">
+                    <svg viewBox="0 0 220 130"
+                         aria-hidden="true">
+                        <path d="M20 110 H210 M20 110 V10"
+                              class="eixos"/>
+                        <path
+                            d="M25 108
+                               C55 108, 70 95, 85 65
+                               C98 35, 103 18, 115 18
+                               C127 18, 132 35, 145 65
+                               C160 95, 175 108, 205 108"
+                            class="curva"/>
+                    </svg>
+                </div>
+
+                <div class="conteudo-cartao">
+                    <h3>Distribuição normal</h3>
+                    <p>
+                        Explore a curva em forma de sino,
+                        sua média e seu desvio-padrão.
+                    </p>
+                    <span class="link-cartao">
+                        Abrir gráfico →
+                    </span>
+                </div>
+
+            </button>
+
+            <!-- CARTÃO 3: GRÁFICO COMBINADO -->
+            <button class="cartao"
+                    data-grafico="combinado"
+                    type="button">
+
+                <div class="ilustracao combinado">
+                    <svg viewBox="0 0 220 130"
+                         aria-hidden="true">
+                        <path d="M20 10 V110 H210"
+                              class="eixos"/>
+                        <rect x="35" y="85" width="20" height="25"/>
+                        <rect x="59" y="62" width="20" height="48"/>
+                        <rect x="83" y="38" width="20" height="72"/>
+                        <rect x="107" y="24" width="20" height="86"/>
+                        <rect x="131" y="48" width="20" height="62"/>
+                        <rect x="155" y="76" width="20" height="34"/>
+                        <path
+                            d="M25 108
+                               C55 108, 70 95, 85 65
+                               C98 35, 103 18, 115 18
+                               C127 18, 132 35, 145 65
+                               C160 95, 175 108, 205 108"
+                            class="curva"/>
+                    </svg>
+                </div>
+
+                <div class="conteudo-cartao">
+                    <h3>Histograma + normal</h3>
+                    <p>
+                        Compare o histograma com
+                        a curva normal teórica.
+                    </p>
+                    <span class="link-cartao">
+                        Abrir gráfico →
+                    </span>
+                </div>
+
+            </button>
+
+        </section>
+
+        <!-- ÁREA ONDE O GRÁFICO SERÁ MOSTRADO -->
+        <section id="resultado"
+                 class="resultado"
+                 hidden>
+
+            <div class="barra-resultado">
+                <h2 id="titulo-grafico">Resultado</h2>
+
+                <button id="fechar"
+                        class="botao-fechar"
+                        type="button">
+                    Fechar ✕
+                </button>
+            </div>
+
+            <p id="mensagem" aria-live="polite">
+                Selecione um gráfico.
+            </p>
+
+            <img id="grafico-gerado"
+                 alt="Gráfico gerado pelo Python"
+                 hidden>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Projeto educacional • HTML, CSS, JavaScript e Python
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+</html>
